@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Food And Beverages POS System</title>
+  <link rel="icon" type="image/x-icon" href="assets/image/order.png" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      list-style: none;
+      text-decoration: none;
+      color: black;
+      font-family: Verdana, Geneva, Tahoma, sans-serif;
+    }
+
+    .logo h1 {
+      display: flex;
+      align-items: start;
+      font-size: 20px;
+      animation: fadeDown 1s ease-out forwards;
+    }
+
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 60px;
+      padding: 0 7vw;
+      background-color: rgb(248, 232, 217);
+      border-bottom: 4px solid rgb(252, 196, 124);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+      opacity: 0;
+      animation: fadeIn 1.2s ease-in forwards;
+    }
+
+    .spn0 {
+      color: orange;
+    }
+
+    .header ul {
+      display: flex;
+      align-items: center;
+    }
+
+    .header ul li span:hover {
+      cursor: pointer;
+      color: red;
+    }
+
+    .nav ul li {
+      padding: 0 10px;
+      font-size: 18px;
+      font-weight: bold;
+    }
+
+    .home {
+      background-color: rgb(248, 232, 217);
+      padding: 0 7vw;
+      animation: fadeInBody 1.5s ease-in-out forwards;
+    }
+
+    .main-home {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap-reverse;
+    }
+
+    .main-home div:nth-child(2) {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      padding-top: 40px;
+      animation: zoomIn 1.4s ease-out forwards;
+    }
+
+    .main-home div:nth-child(1) {
+      padding-top: 20px;
+      flex: 1;
+      font-size: 30px;
+      opacity: 0;
+      animation: slideUp 1.2s ease-out forwards;
+    }
+
+    .main-home div:nth-child(1) p {
+      font-size: 15px;
+      padding: 20px 0;
+    }
+
+    .spn00 {
+      color: rgb(253, 57, 8);
+    }
+    .spn001 {
+      color: rgb(253, 57, 8);
+      text-decoration: underline;
+    }
+    .spn000 {
+      color: orange;
+      text-decoration: underline;
+    }
+    .spn1 {
+      color: rgb(253, 57, 8);
+    }
+
+    .paragraph {
+      font-weight: bold;
+    }
+
+    .btn {
+      cursor: pointer;
+      margin-top: 20px;
+      width: 150px;
+      font-weight: bold;
+      color: aliceblue;
+      line-height: 50px;
+      background-color: rgb(253, 77, 8);
+      border-radius: 8px;
+      border: 1px solid rgb(253, 77, 8);
+      box-shadow: 0 10px 15px rgb(253, 77, 8);
+      transition: all 0.2s;
+      transform: translateY(20px);
+      opacity: 0;
+      animation: popIn 1.3s ease forwards;
+      animation-delay: 0.8s;
+    }
+
+    .btn i {
+      color: white;
+    }
+
+    .btn:hover {
+      background-color: white;
+      box-shadow: 0 2px 15px rgb(258, 120, 69);
+      border: 1px solid rgb(253, 77, 8);
+      color: orange;
+    }
+
+    .btn:hover i {
+      color: orange;
+    }
+
+    /* Animations */
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    @keyframes fadeDown {
+      from { opacity: 0; transform: translateY(-20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes fadeInBody {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    @keyframes slideUp {
+      from { transform: translateY(40px); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
+    }
+
+    @keyframes zoomIn {
+      0% { transform: scale(0.95); opacity: 0; }
+      100% { transform: scale(1); opacity: 1; }
+    }
+
+    @keyframes popIn {
+      0% { transform: translateY(20px); opacity: 0; }
+      100% { transform: translateY(0); opacity: 1; }
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .main-home {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .main-home > div {
+        flex: 1 1 100%;
+      }
+
+      .main-home div:nth-child(1) {
+        font-size: 24px;
+      }
+
+      .main-home div:nth-child(1) p {
+        font-size: 14px;
+      }
+
+      .btn {
+        width: 100%;
+        max-width: 200px;
+      }
+
+      .header {
+        flex-direction: column;
+        padding: 10px;
+        height: auto;
+      }
+
+      .nav ul {
+        margin-top: 10px;
+        flex-direction: column;
+      }
+
+      .nav ul li {
+        padding: 10px 0;
+      }
+    }
+
+     footer {
+      background: #1e1e2f;
+      color: #fff;
+      padding: 40px 20px;
+      animation: fadeInFooter 0.9s ease-in-out forwards;
+      animation-delay: 1.2s;
+      opacity: 0;
+      width: 100%;
+    }
+
+    .footer-container {
+      max-width: 1200px;
+      margin: auto;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 2rem;
+    }
+
+    .footer-section {
+      flex: 1 1 30%;
+      min-width: 250px;
+      opacity: 0;
+      animation: fadeUp 0.8s ease-out forwards;
+    }
+    .change-color {
+      color: #fff;
+    }
+    .change-change {
+      color: #cbd5e1;
+    }
+
+    .footer-section:nth-child(1) { animation-delay: 1.3s; }
+    .footer-section:nth-child(2) { animation-delay: 1.5s; }
+    .footer-section:nth-child(3) { animation-delay: 1.7s; }
+
+    .footer-logo {
+      font-size: 1.8rem;
+      font-weight: bold;
+      color: orange;
+      margin-bottom: 10px;
+    }
+
+    .footer-section h4 {
+      font-size: 1.2rem;
+      margin-bottom: 12px;
+    }
+
+    .footer-section p {
+      color: #cbd5e1;
+      font-size: 0.95rem;
+      margin: 6px 0;
+    }
+
+    .footer-icons a {
+      color: #cbd5e1;
+      margin-right: 12px;
+      font-size: 1.2rem;
+      transition: transform 0.3s, color 0.3s;
+      opacity: 0;
+      animation: iconFloat 0.6s ease-out forwards;
+    }
+
+    .footer-icons a:nth-child(1) { animation-delay: 1.9s; }
+    .footer-icons a:nth-child(2) { animation-delay: 2.1s; }
+    .footer-icons a:nth-child(3) { animation-delay: 2.3s; }
+    .footer-icons a:nth-child(4) { animation-delay: 2.5s; }
+
+    .footer-icons a:hover {
+      transform: scale(1.2);
+      color: orange;
+    }
+
+    .footer-bottom {
+      text-align: center;
+      margin-top: 30px;
+      color: #aaa;
+      font-size: 0.85rem;
+      opacity: 0;
+      animation: fadeUp 0.8s ease-out forwards;
+      animation-delay: 2.7s;
+    }
+
+    /* Animations */
+    @keyframes fadeInBody {
+      0% { opacity: 0; }
+      100% { opacity: 1; }
+    }
+
+    @keyframes slideDown {
+      0% { transform: translateY(-30px); opacity: 0; }
+      100% { transform: translateY(0); opacity: 1; }
+    }
+
+    @keyframes fadeUp {
+      0% { transform: translateY(30px); opacity: 0; }
+      100% { transform: translateY(0); opacity: 1; }
+    }
+
+    @keyframes popIn {
+      0% { transform: translateY(20px); opacity: 0; }
+      100% { transform: translateY(0); opacity: 1; }
+    }
+
+    @keyframes fadeInFooter {
+      0% { opacity: 0; transform: translateY(40px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes iconFloat {
+      0% { transform: translateY(10px); opacity: 0; }
+      100% { transform: translateY(0); opacity: 1; }
+    }
+
+    @media (max-width: 768px) {
+      .footer-container {
+        flex-direction: column;
+        align-items: center;
+        gap: 1.5rem;
+      }
+
+      .footer-section {
+        flex: 1 1 100%;
+        text-align: center;
+      }
+
+      .footer-icons {
+        justify-content: center;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <div class="header">
+      <div class="logo">
+        <h1>Web Based <span class="spn0">POS</span></h1>
+      </div>
+      <div class="nav">
+        <ul>
+          <li id="btn0"><span class="spn0">Admin Login</span></li>
+        </ul>
+      </div>
+    </div>
+  </header>
+
+  <div class="home">
+    <div class="main-home">
+      <div>
+        <h1>Enjoy <span class="spn00">Delicious Food</span> in your Healthy <span class="spn001">LIFE</span><span class="spn000">STYLE</span></h1>
+        <p class="paragraph">Enjoy <span class="spn1">delicious food</span> while embracing a healthy <span class="spn1">lifestyle.</span> Nourish your body with <span class="spn1">flavorful meals</span> that support your <br> <span class="spn000">well-being</span>, <span class="spn000">energize your day</span>, and help you achieve a <span class="spn000">balanced</span>, <span class="spn000">vibrant life.</span></p>
+        <button class="btn">Order Now <i class="fa-solid fa-arrow-right-long"></i></button>
+      </div>
+      <div>
+        <img src="assets/image/img9.png" width="100%" alt="error...">
+      </div>
+    </div>
+  </div>
+
+   <footer>
+    <div class="footer-container">
+      <div class="footer-section">
+        <div class="footer-logo">WEB-BASED POS</div>
+        <p>©2025 WEB-BASED POS SYSTEM. All rights reserved.</p>
+      </div>
+
+      <div class="footer-section">
+        <h4 class="change-color">Contact Us</h4>
+        <p><i class="fas fa-map-marker-alt change-change"></i> Moalboal, Cebu, Philippines</p>
+        <p><i class="fas fa-phone-alt change-change"></i> +639052105011, +639608221955</p>
+        <p><i class="fas fa-envelope change-change"></i> chrisjanpit27@gmail.com</p>
+        <p><i class="fas fa-envelope change-change"></i> abrenicajanino03@gmail.com</p>
+        <p><i class="fab fa-facebook change-change"></i> janino.abrenica</p>
+        <p><i class="fab fa-facebook change-change"></i> chris.nemenzo</p>
+      </div>
+
+      <div class="footer-section">
+        <h4 class="change-color">About the Website</h4>
+        <p>POS System helps streamline retail and restaurant management with powerful tools and intuitive design.</p>
+        <div class="footer-icons">
+          <a href="#"><i class="fab fa-facebook-f change-color"></i></a>
+          <a href="#"><i class="fab fa-instagram change-color"></i></a>
+          <a href="#"><i class="fab fa-linkedin-in change-color"></i></a>
+          <a href="#"><i class="fab fa-youtube change-color"></i></a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      Made by Group 4 of BIT-CT 3B Day<br><br>
+      Major Developers:<br>
+        Janino Abrenica<br>
+        Chris Janpit Nemenzo<br><br>
+        Other Members:<br>
+        Rhya Jhean Dionaldo<br>
+        Sol David Rodavites<br>
+        Jhon Eduard Undang<br>
+        Jomarie Villagonzalo<br>
+        Jepoy Candido<br>
+        Charlie Labaries<br>
+        Kent Ehrl Jhon Ebe<br>
+    </div>
+  </footer>
+
+  <script>
+    $(document).ready(function () {
+      $("#btn0").on("click", function () {
+        window.location.href = "admin/account_and_login/userstorage.php";
+      });
+
+      $(".btn").on("click", function () {
+        window.location.href = "client/costumerpage.php";
+      });
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,83 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    display: flex;
+    flex-direction: column; 
+    align-items: right;
+    justify-content: flex-start;
+    height: 100vh;
+    padding: 20px;
+    margin: 0;
+}
+    
+    h2 {
+        margin-bottom: 20px;
+    }
+
+    button {
+        background: #f47105;
+        color: white;
+        border: none;
+        padding: 10px 15px;
+        margin: 10px 0;
+        width: 100%;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 16px;
+        transition: 0.3s;
+    }
+    
+    button:hover {
+        background: #868686;
+        color: black;
+    }
+    
+    label {
+        font-weight: bold;
+        display: block;
+        margin: 15px 0;
+    }
+
+    table {
+        width: 80%;
+        border-collapse: collapse;
+        margin: 20px auto;
+        background: white;
+    }
+    th, td {
+        border: 1px solid #ddd;
+        padding: 10px;
+        text-align: center;
+    }
+    th {
+        background-color: #ef890c;
+        color: white;
+    }
+    
+    img {
+        width: 100px;
+        height: auto;
+        border-radius: 5px;
+    }
+
+input {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+input[type="file"] {
+    border: none;
+}
+
+
+
+
+@media (max-width: 400px) {
+    .container {
+        width: 90%;
+    }
+}

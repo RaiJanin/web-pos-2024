@@ -1,0 +1,374 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        * {
+            max-height: min-content;
+            box-sizing: border-box;
+            padding-top: 1px;
+            text-decoration: none;
+            list-style: none;
+            font-family: Arial, sans-serif;
+        }
+
+        .navbar {
+            background-color: #FF8C00;
+            backdrop-filter: blur(10px);
+            width: 100%;
+            position: sticky;
+            top: 0;
+            z-index: 999;
+            box-shadow: 0 10px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 50px;
+            flex-wrap: wrap;
+            position: relative;
+        }
+
+        nav ul {
+            display: flex;
+            gap: 20px;
+        }
+
+        nav ul li a {
+            color: white;
+            font-weight: bold;
+            text-transform: uppercase;
+            background-color:#159804;
+            border: none;
+            border-radius: 10px;
+            transition: 0.3s ease;
+            padding: 10px;
+            text-decoration: none;
+            display: inline-block; /* Ensure box wraps around text */
+            background-color: rgba(245, 62, 6, 0.1); /* Light background color */
+            box-shadow: 0 0px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        nav ul li a:hover {
+            color: #0c0c0c;
+            background-color: #f53e06; /* Background on hover */
+            box-shadow: 0 0 15px rgba(245, 62, 6, 0.7); /* Stronger shadow on hover */
+            transform: scale(1.1); /* Subtle zoom effect */
+        }
+        
+        .icon-tab {
+            position: fixed;
+            top: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: #FF8C00;
+            backdrop-filter: blur(10px);
+            padding: 10px 20px;
+            border-radius: 20px;
+            box-shadow: 0 10px 10px rgba(0, 0, 0, 0.5);
+        }
+        
+        .icon-tab ul {
+            display: flex;
+            gap: 20px;
+        }
+        
+        .icon-tab ul li {
+            list-style: none;
+        }
+        
+        .icon-tab ul li a {
+            text-decoration: none;
+            color: black;
+            font-size: 16px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: 0.3s;
+        }
+        
+        .icon-tab ul li a:hover {
+            color: orange;
+        }
+        
+        .icon-tab ul li a img {
+            width: 18px;  /* Reduced from 24px */
+            height: 18px; /* Reduced from 24px */
+            transition: 0.3s;
+        }
+        
+        .icon-tab ul li a:hover img {
+            transform: scale(1.1);
+        }
+
+        .logout-btn {
+            background: red;
+            text-align: center;
+            color: white;
+            width: 120px;
+            padding: 10px 25px;
+            border: none;
+            border-radius: 20px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .logout-btn:hover {
+            background: #f77218;
+            transform: scale(0.9);
+        }
+
+        @media (max-width: 768px) {
+            nav {
+                flex-direction: row;
+                text-align: center;
+            }
+            nav ul {
+                flex-direction: row;
+                gap: 10px;
+                margin-bottom: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="navbar">
+    <nav class="icon-tab">
+        <ul>
+            <li><a href="dashboard.php"><img src="image/dashboard.png" alt="Dashboard">Dashboard</a></li>
+            <li><a href="show_orders.php"><img src="image/order.png" alt="Order">Orders</a></li>
+            <li><a href="inventory.php"><img src="image/inventory.png" alt="Inventory">Inventory</a></li>
+            <li><a href="account_sec.php"><img src="image/about.png" alt="About">Account Security</a></li>
+        </ul>
+        <button class="logout-btn" onclick="confirmLogout()">Logout</button>
+    </nav>
+</div>
+
+<script>
+    function confirmLogout() {
+        if (confirm("Are you sure you want to logout?")) {
+            window.location.href = "session_destroy.php";
+        }
+    }
+</script>
+
+</body><br><br>
+</html> -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" href="../../assets/style.css">
+    <style>
+        * {
+            max-height: min-content;
+            box-sizing: border-box;
+            padding-top: 1px;
+            text-decoration: none;
+            list-style: none;
+            font-family: Arial, sans-serif;
+        }
+
+        .navbar {
+            background-color: #FF8C00;
+            backdrop-filter: blur(10px);
+            width: 100%;
+            position: sticky;
+            top: 0;
+            z-index: 999;
+            box-shadow: 0 10px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 50px;
+            flex-wrap: wrap;
+            position: relative;
+        }
+
+        nav ul {
+            display: flex;
+            gap: 20px;
+        }
+
+        nav ul li a {
+            color: white;
+            font-weight: bold;
+            text-transform: uppercase;
+            background-color: #159804;
+            border: none;
+            border-radius: 10px;
+            transition: 0.3s ease;
+            padding: 10px;
+            text-decoration: none;
+            display: inline-block;
+            background-color: rgba(245, 62, 6, 0.1);
+            box-shadow: 0 0px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        nav ul li a:hover {
+            color: #0c0c0c;
+            background-color: #f53e06;
+            box-shadow: 0 0 15px rgba(245, 62, 6, 0.7);
+            transform: scale(1.1);
+        }
+
+        .icon-tab {
+            position: fixed;
+            top: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: #FF8C00;
+            backdrop-filter: blur(10px);
+            padding: 10px 20px;
+            border-radius: 20px;
+            box-shadow: 0 10px 10px rgba(0, 0, 0, 0.5);
+            width: 90%;
+            max-width: 800px;
+        }
+
+        .icon-tab ul {
+            display: flex;
+            gap: 20px;
+        }
+
+        .icon-tab ul li {
+            list-style: none;
+        }
+
+        .icon-tab ul li a {
+            text-decoration: none;
+            color: black;
+            font-size: 16px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: 0.3s;
+        }
+
+        .icon-tab ul li a:hover {
+            color: orange;
+        }
+
+        .icon-tab ul li a img {
+            width: 18px;
+            height: 18px;
+            transition: 0.3s;
+        }
+
+        .icon-tab ul li a:hover img {
+            transform: scale(1.1);
+        }
+
+        .logout-btn {
+            background: red;
+            text-align: center;
+            color: white;
+            width: 120px;
+            padding: 10px 25px;
+            border: none;
+            border-radius: 20px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .logout-btn:hover {
+            background: #f77218;
+            transform: scale(0.9);
+        }
+
+        .menu-toggle {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            gap: 5px;
+        }
+
+        .menu-toggle span {
+            height: 3px;
+            width: 25px;
+            background-color: black;
+            border-radius: 2px;
+            transition: 0.3s;
+        }
+
+        @media (max-width: 768px) {
+            .menu-toggle {
+                display: flex;
+                position: absolute;
+                right: 20px;
+                top: 15px;
+            }
+
+            .icon-tab ul {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 60px;
+                left: 0;
+                width: 100%;
+                background-color: #FF8C00;
+                padding: 10px 0;
+                box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+                z-index: 1000;
+            }
+
+            .icon-tab ul.show {
+                display: flex;
+            }
+
+            .icon-tab ul li {
+                padding: 10px 0;
+                text-align: center;
+            }
+
+            .logout-btn {
+                margin-top: 10px;
+                align-self: center;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="navbar">
+    <nav class="icon-tab">
+        <div class="menu-toggle" onclick="toggleMenu()">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <ul>
+            <li><a href="dashboard.php"><img src="../../assets/image/dashboard.png" alt="Dashboard">Dashboard</a></li>
+            <li><a href="show_orders.php"><img src="../../assets/image/order.png" alt="Order">Orders</a></li>
+            <li><a href="inventory.php"><img src="../../assets/image/inventory.png" alt="Inventory">Inventory</a></li>
+            <li><a href="account_sec.php"><img src="../../assets/image/about.png" alt="About">Account Security</a></li>
+        </ul>
+        <button class="logout-btn" onclick="confirmLogout()">Logout</button>
+    </nav>
+</div>
+
+<script>
+    function confirmLogout() {
+        if (confirm("Are you sure you want to logout?")) {
+            window.location.href = "../../utilities/session_destroy.php";
+        }
+    }
+
+    function toggleMenu() {
+        document.querySelector('.icon-tab ul').classList.toggle('show');
+    }
+</script>
+
+</body>
+</html>
