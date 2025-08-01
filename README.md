@@ -1,7 +1,7 @@
 # web-pos-2024
 A capstone project 2024
 -----------------------------------
-Simple POS with a web-based ordering system. Designed for food industries. This project is built with a basic OOP PHP
+Simple POS with a web-based ordering system. Designed for food industries. This project usually uses the a.jax request method of JavaScript for json encoding and decoding of data.
 
 Currently named as:
 Web-Based POS System
