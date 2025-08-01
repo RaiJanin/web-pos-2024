@@ -12,8 +12,7 @@ The system utilizes AJAX (Asynchronous JavaScript and XML) for efficient data ha
 
 Currently, the project is deployed via Hostinger Web Hosting, ensuring accessibility and online availability for testing and demonstration purposes.
 
------------------------------------
-Access the web through https://grp4foodwebpos.com
+
 -----------------------------------
 
 Project limits:
@@ -24,10 +23,14 @@ Project limits:
 
 -Low-Level security
 
--------
+-----------------------------------
 Developed by:
 
 
 Janino Abrenica (backend PHP)
 
 Chris Janpit Nemenzo (frontend CSS)
+
+-----------------------------------
+Access the web through https://grp4foodwebpos.com
+-----------------------------------
