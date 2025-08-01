@@ -9,7 +9,9 @@ Web-Based POS System
 For the thesis project of:
 Food Industry POS: Developing a Scalable Point-of-sale System for Enhanced Customer Experience
 
+This project is currently serving with Hostinger Web Hosting
 
+Access the web through https://grp4foodwebpos.com
 -----------------------------------
 
 Project limits:
