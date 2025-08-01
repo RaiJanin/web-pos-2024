@@ -3,6 +3,7 @@ A capstone project 2024
 -----------------------------------
 
 Web-Based POS System
+
 Thesis Title: Food Industry POS: Developing a Scalable Point-of-Sale System for Enhanced Customer Experience
 
 This project is a web-based Point-of-Sale (POS) system integrated with a simple online ordering platform, specifically designed for food industry businesses such as restaurants and cafés. It streamlines both on-site transactions and remote ordering to enhance the overall customer experience.
