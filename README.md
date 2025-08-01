@@ -1,6 +1,7 @@
 # web-pos-2024
 A capstone project 2024
 -----------------------------------
+
 Web-Based POS System
 A Scalable Ordering and Point-of-Sale Solution for the Food Industry
 
@@ -11,6 +12,7 @@ The system utilizes AJAX (Asynchronous JavaScript and XML) for efficient data ha
 Thesis Title: Food Industry POS: Developing a Scalable Point-of-Sale System for Enhanced Customer Experience
 
 Currently, the project is deployed via Hostinger Web Hosting, ensuring accessibility and online availability for testing and demonstration purposes.
+
 -----------------------------------
 Access the web through https://grp4foodwebpos.com
 -----------------------------------
