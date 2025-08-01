@@ -17,11 +17,17 @@ Access the web through https://grp4foodwebpos.com
 -----------------------------------
 
 Project limits:
+
 -No forgot password feature
+
 -Limited order status notifications. Only notifies the customer for the order accept and reject.
+
 -Low-Level security
 
 -------
 Developed by:
+
+
 Janino Abrenica (backend PHP)
+
 Chris Janpit Nemenzo (frontend CSS)
